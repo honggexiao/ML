@@ -7,7 +7,7 @@ TRAINING_DATA_DIR = 'trainingDigits'
 TEST_DATA_DIR = 'testDigits'
 K = 5
 
-#将原始数据转换成一行向量
+#将原始数据转换成一行向量,后期可用卷积神经网络CNN
 def img2vector(filename):
     imag_vec = np.zeros((1, 1024))
     fr = open(filename)
