@@ -120,22 +120,6 @@ def merge_leaf(lchild, rchild):
 def is_tree(obj):
     return type(obj).__name__ == 'dict'
 
-# #for regression
-# def get_mean(tree):
-#     if is_tree(tree['right']):
-#         tree['right'] = get_mean(tree['right'])
-#     if is_tree(tree['left']):
-#         tree['left'] = get_mean(tree['left'])
-#
-#     return (tree['left'].val + tree['right'].val)/2.0
-#for classify
-# def get_class(tree, type):
-#     if is_tree(tree['right']):
-#         tree['right'] = get_mean(tree['right'])
-#     if is_tree(tree['left']):
-#         tree['left'] = get_mean(tree['left'])
-
-
 #利用验证数据对tree进行递归剪枝
 def prune(tree, test_data, type='regress'):
     # if np.shape(test_data)[0] == 0:return get_mean(tree)
@@ -180,11 +164,4 @@ def forcast_or_classify(tree, sample, type='regress'):
     else: return forcast_or_classify(tree['left'], sample)
 
 if __name__ == '__main__':
-    # mydat = np.mat(load_data_set('ex00.txt'))
-    # print(mydat[:,-1].T.tolist()[0])
-    # tree = create_reg_tree(mydat)
-    # tree =
-    # print(tree)
-    dic = {'0': 3, '1':2, '3':1, '4':6}
-    sort_dic = sorted(dic.items(), key=operator.itemgetter(1), reverse=True)
-    print(sort_dic)
+    pass
